@@ -1,0 +1,30 @@
+Test changes with
+
+spark.driver.cores
+spark.driver.memory
+executor-memory
+executor-cores
+spark.cores.max
+
+reserve cores(1 core per node) for daemons
+num_executors = total_cores/num_cores
+num_partitions
+
+Too much memory per executor can result in excessive GC delays
+Too little memory can lose benefits from running multiple tasks in the single JVM
+Look at stats(network, CPU, memory etc and tweak to improve performance)\
+
+Use SparkUI, sysdig
+
+Skew:
+ Can severely downgrade performance
+  1) Exterme imbalance of work in the cluster
+  2) Tasks within a stage take uneven amounts of time to finish
+
+
+How to check 
+
+Spark UI job waiting only on some of the tasks
+Look for large variances in memory usage within job(primarily works if it is at the begining of the job and doing data ingeestion - otherwise can ve misleading)
+Executot missing heartbeat
+check partition sizes of RDD while debugging to confirm
