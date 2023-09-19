@@ -28,3 +28,45 @@ Spark UI job waiting only on some of the tasks
 Look for large variances in memory usage within job(primarily works if it is at the begining of the job and doing data ingeestion - otherwise can ve misleading)
 Executot missing heartbeat
 check partition sizes of RDD while debugging to confirm
+
+Check Spark System metrics such as:
+CPU(cores), CPU percentage, Memory(bytes) and Memory(%)
+Particularly check if any huge difference among those JVM , For exampe one of them takes 93% and other takes 10% of memory
+
+SKEW in ingestion of data: Check if rdd is split evenly accross all the partitions. 
+Solution of Handling skews: Blind repartition is the most native apprach but effective - Great for narrow transformations, good for increasing the number of partitions, use coalesce not repartion to decrease partitions
+
+Cache/Persist
+
+Resuse the dataframe with transformations
+Unpersist when done
+Without cache, Dataframe is buit from scratch each time
+Don't over persist
+    worse memory performance
+    possible slowdown
+    GC pressure
+
+
+some options for easily improve the performance
+
+Try seq.par.foreach instead of just seq.foreach
+   Increase parallelization
+   Race conditions and non-determinitistic results
+   Use accumlators or synchronization to protect
+
+Avoid udsf if possible
+  Deserialize every row to object
+  Apply lambda
+  Then researialize it
+  More garbage generated
+
+
+
+
+
+
+
+
+
+
+
