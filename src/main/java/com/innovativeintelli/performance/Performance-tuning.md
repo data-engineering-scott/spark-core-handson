@@ -99,6 +99,7 @@ check the timeSpent on task vs garbage collection on spark UI
 
 
 
+![image](https://github.com/data-engineering-scott/spark-core-handson/assets/111550128/f0ec695f-01b3-4f41-b943-ad0126376541)
 
 
 
