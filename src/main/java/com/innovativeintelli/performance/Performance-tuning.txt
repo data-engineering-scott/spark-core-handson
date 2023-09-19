@@ -60,6 +60,34 @@ Avoid udsf if possible
   Then researialize it
   More garbage generated
 
+Things to remember :
+
+Keep Larger data frame left, spark by default try to shuffle the dataframe on the right
+Follow good partitioning stratagies
+
+Too few partitions - less parallelism
+Too many partitions - scheduling issues
+Improve scan efficiency
+Try to use same partition between Dataframes for joins
+Skipped stages are good
+Caching prevent repeated exchnages where data is reused
+
+Java Serialization can be slow sometimes explore kryoSerialization for the default data types
+
+When working with Executors that is less than 32 GB, See CompressedOOPS JVM options which will allow use 4 bytes pointer instead of 8 bytes 
+Example -XX:UseCompressedOOPS
+
+
+Garbage collections:
+
+Contention when allocating more objects
+Full GC occuring before tasks complete
+Too many RDD cached
+Frequent garbage collection
+Long time spent in gc
+Missed heart beats
+
+
 
 
 
