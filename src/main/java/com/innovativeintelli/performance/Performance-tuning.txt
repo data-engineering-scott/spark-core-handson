@@ -86,6 +86,7 @@ Too many RDD cached
 Frequent garbage collection
 Long time spent in gc
 Missed heart beats
+check the timeSpent on task vs garbage collection on spark UI
 
 
 
