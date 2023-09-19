@@ -88,8 +88,13 @@ Long time spent in gc
 Missed heart beats
 check the timeSpent on task vs garbage collection on spark UI
 
+<img width="1028" alt="image" src="https://github.com/data-engineering-scott/spark-core-handson/assets/111550128/991572cb-4092-4896-b20f-972aa98e7a5f">
 
 
+<img width="1019" alt="image" src="https://github.com/data-engineering-scott/spark-core-handson/assets/111550128/721c7866-6260-408e-bb64-ff7563ec742b">
+
+
+![image](https://github.com/data-engineering-scott/spark-core-handson/assets/111550128/1a1aa554-56b8-4106-9d3f-a22545a99cc4)
 
 
 
